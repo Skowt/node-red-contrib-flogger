@@ -10,6 +10,7 @@ module.exports = function(RED) {
 
 		this.loglevel = n.loglevel
 		this.logfile = n.logfile
+		this.heading = n.heading
 		this.inputchoice = n.inputchoice
 		this.inputobject = n.inputobject
 		this.inputobjectType = n.inputobjectType
@@ -28,14 +29,14 @@ module.exports = function(RED) {
 			logmessage = ConstructLogMessage(node, msg)
 
 			if (node.sendpane) { // User wants the logentry also in the debug pane of the webinterface
-				node.warn(loglevel + " [" + logmessage.var + "] " + logmessage.msg)
+				node.warn( "[" + loglevel + "][" + msg._msgid + "][" + node.heading + "][" + logmessage.var + "] " + logmessage.msg)
 			}
 
 			if (node.logconfig.logstyle == "plain") {
 				if (node.logconfig.stamp == "none") {
-					logline = loglevel + " [" + logmessage.var + "] " + logmessage.msg + "\n"
+					logline = "[" + loglevel + "][" + msg._msgid + "][" + node.heading + "][" + logmessage.var + "] " + logmessage.msg + "\n"
 				} else {
-					logline = logTimeStamp + " " + loglevel + " [" + logmessage.var + "] " + logmessage.msg + "\n"
+					logline = "[" + logTimeStamp + "][" + loglevel + "][" + msg._msgid + "][" + node.heading + "][" + logmessage.var + "] " + logmessage.msg + "\n"
 				}
 			} else {
 				logline = GetJSONMsg(logTimeStamp, loglevel, logmessage.var, logmessage.raw)

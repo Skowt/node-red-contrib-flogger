@@ -1,5 +1,7 @@
 # Flogger for Node-Red
 
+A forked version of Flogger that adds node information to each log message.
+
 This Node-Red module makes logging much easier and more granulated than the debug window of Node-Red. Please install it and see the help in the info-pane of Node-Red.
 
 With flogger you can log to multiple logfiles from everywhere in your flows.  It's easy to keep logging your flows without clogging up the Node-Red debug pane.

@@ -89,6 +89,7 @@
 		defaults: {
 			name: {value:""},
 			logfile: {value:""},
+			heading: {value:"", required: true},
 			inputchoice: {value:"fullmsg"},
 			inputobject: {value:"payload"},
 			inputobjectType: {value: 'msg'},
@@ -132,9 +133,13 @@
 		<label for="node-input-name"><i class="icon-tag"></i> Name</label>
 		<input type="text" id="node-input-name" placeholder="Name">
 	</div>
-		<div class="form-row">
+	<div class="form-row">
 		<label for="node-input-logfile"><i class="fa fa-file-text-o"></i> Logfile</label>
 		<input type="text" id="node-input-logfile" placeholder="Name of the logfile">
+	</div>
+	<div class="form-row">
+		<label for="node-input-heading"><i class="fa fa-fa-header"></i> Prefix</label>
+		<input type="text" id="node-input-heading" placeholder="Prefix to add to the log">
 	</div>
 	<div class="form-row">
 		<label for="node-input-inputchoice"><i class="fa fa-exclamation"></i> Log</label>
